@@ -1,0 +1,72 @@
+import 'package:flutter/material.dart';
+import 'package:portfolio_website/models/Project.dart';
+import 'package:portfolio_website/responsive.dart';
+import 'package:portfolio_website/screens/home/components/project_card.dart';
+import '../../../constants.dart';
+import 'dart:js' as js;
+
+class MyProjects extends StatelessWidget {
+  const MyProjects({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          "My Project Works",
+          style: Theme.of(context).textTheme.headline6?.copyWith(
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+                  fontSize: !Responsive.isMobile(context)
+                      ? Responsive.isTablet(context)
+                          ? 25
+                          : 30
+                      : 14
+              ),
+        ),
+        const SizedBox(height: defaultPadding),
+        Responsive(
+          mobile: ProjectsGridView(
+            crossAxisCount: 1,
+            childAspectRatio: 1.7,
+          ),
+          mobileLarge: ProjectsGridView(crossAxisCount: 2),
+          tablet: ProjectsGridView(childAspectRatio: 1.1),
+          desktop: ProjectsGridView(),
+        )
+      ],
+    );
+  }
+}
+
+class ProjectsGridView extends StatelessWidget {
+  const ProjectsGridView({
+    Key? key,
+    this.crossAxisCount = 3,
+    this.childAspectRatio = 1.3,
+  }) : super(key: key);
+
+  final int crossAxisCount;
+  final double childAspectRatio;
+
+  @override
+  Widget build(BuildContext context) {
+    return GridView.builder(
+      shrinkWrap: true,
+      physics: NeverScrollableScrollPhysics(),
+      itemCount: demo_projects.length,
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: crossAxisCount,
+        childAspectRatio: childAspectRatio,
+        crossAxisSpacing: defaultPadding,
+        mainAxisSpacing: defaultPadding,
+      ),
+      itemBuilder: (context, index) => ProjectCard(
+        project: demo_projects[index],
+      ),
+    );
+  }
+}
