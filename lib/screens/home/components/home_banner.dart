@@ -46,7 +46,7 @@ class HomeBanner extends StatelessWidget {
                 if (!Responsive.isMobileLarge(context))
                   ElevatedButton(
                     onPressed: () {
-                      js.context.callMethod('open', [LINK_GITHUB]);
+                      js.context.callMethod('open', [LINK_PROFILE_CARD]);
                     },
                     style: TextButton.styleFrom(
                       padding: EdgeInsets.symmetric(
