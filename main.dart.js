@@ -64468,7 +64468,7 @@ s.push(A.db(q,20,q))
 if(!(b.N(p).f.a.a<=700)){p=A.akK(q,q,B.c0,q,q,q,q,q,q,q,new A.ba(40,20,40,20),q,q,q,q,q,q,q)
 s.push(A.aiI(A.cR("EXPLORE NOW",q,q,A.e2(q,q,B.f6,q,q,q,q,q,q,q,q,q,q,q,q,q,!0,q,q,q,q,q,q,q,q),q,q),new A.WT(),p))}return new A.oG(o,A.r9(B.bS,A.b([new A.vL(n,B.lk,q),m,new A.dw(B.C9,A.h3(s,B.aT,B.Gc,B.L),q)],r),B.uO),q)}}
 A.WT.prototype={
-$0(){$.hW().h0("open",["https://github.com/Octo-Siddharth"])},
+$0(){$.hW().h0("open",["https://octo-siddharth.github.io/Profile-Card/"])},
 $S:0}
 A.Gv.prototype={
 K(a,b){var s,r,q=null,p=A.aq(b).a0.x
